@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shopping Cart API", Version = "v1" });
 });
 
-var connectionString = builder.Configuration.GetConnectionString("DbConnection");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ShoppingCartDbContext>(x => x.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IUserService, UserService>();
